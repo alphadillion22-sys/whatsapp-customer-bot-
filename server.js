@@ -82,11 +82,28 @@ function requireAdmin(req, res, next) {
     'Content-Security-Policy': "default-src 'none'; img-src data:; style-src 'unsafe-inline'; form-action 'self'; base-uri 'none'; frame-ancestors 'none'" });
   next();
 }
+
 function sameOrigin(req, res, next) {
   const origin = req.get('origin');
-  if (origin && new URL(origin).host !== req.get('host')) return res.status(403).send('Invalid form origin.');
-  next();
+
+  if (!origin) return next();
+
+  try {
+    const parsed = new URL(origin);
+
+    if (
+      !['https:', 'http:'].includes(parsed.protocol) ||
+      parsed.host !== req.get('host')
+    ) {
+      return res.status(403).send('Invalid form origin.');
+    }
+
+    return next();
+  } catch (error) {
+    return res.status(403).send('Invalid form origin.');
+  }
 }
+
 
 app.get('/', (_, res) => res.type('text').send('WhatsApp bot running. Visit /admin for linking.'));
 app.get('/health', (_, res) => res.json({
