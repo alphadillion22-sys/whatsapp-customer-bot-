@@ -1,0 +1,29 @@
+{
+  "intents": [
+    {
+      "name": "greeting",
+      "phrases": ["hello", "hi", "hey", "good morning", "good afternoon", "good evening", "how far"],
+      "reply": "Hello! 👋 Welcome to LearnBridge. How can I help you today? You can ask about registration, books, prices or support."
+    },
+    {
+      "name": "registration",
+      "phrases": ["register", "registration", "sign up", "signup", "create account", "join", "how to start"],
+      "reply": "You can register on LearnBridge for free! Visit https://learnbridge.ng to create your account."
+    },
+    {
+      "name": "pricing",
+      "phrases": ["price", "cost", "how much", "payment", "how much be", "how much is", "is it free", "na how much"],
+      "reply": "LearnBridge registration is free. Individual premium books have their own displayed prices. Visit https://learnbridge.ng to see available books and prices."
+    },
+    {
+      "name": "books",
+      "phrases": ["book", "textbook", "chapter", "subject", "biology", "chemistry", "jss", "ss1", "ss2", "ss3"],
+      "reply": "Explore educational books and subjects at https://learnbridge.ng. Create a free account to start reading."
+    },
+    {
+      "name": "support",
+      "phrases": ["help", "support", "problem", "issue", "not working", "cant login", "cannot login"],
+      "reply": "Please describe the issue you're experiencing. A human will follow up when available."
+    }
+  ]
+}

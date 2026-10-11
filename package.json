@@ -1,10 +1,21 @@
 {
-  "name": "whatsapp-keyword-auto-reply",
-  "version": "1.0.0",
+  "name": "whatsapp-customer-bot-light",
+  "version": "2.0.0",
   "private": true,
-  "description": "Keyword auto-reply bot for personal WhatsApp (unofficial)",
+  "description": "Lightweight, rule-based WhatsApp customer assistant",
   "main": "server.js",
-  "scripts": {"start": "node server.js"},
-  "dependencies": {"express": "^4.21.2", "qrcode": "^1.5.4", "whatsapp-web.js": "^1.34.0"},
-  "engines": {"node": ">=20"}
+  "scripts": {
+    "start": "node server.js",
+    "check": "node --check server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@whiskeysockets/baileys": "6.7.24",
+    "express": "4.21.2",
+    "pino": "9.7.0",
+    "qrcode": "1.5.4",
+    "qrcode-terminal": "0.12.0"
+  }
 }
