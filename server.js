@@ -93,7 +93,9 @@ function sameOrigin(req, res, next) {
 
     if (
       !['https:', 'http:'].includes(parsed.protocol) ||
-      parsed.host !== req.get('host')
+      
+parsed.origin !== new URL(process.env.RENDER_EXTERNAL_URL || 'https://whatsapp-customer-bot-2fnp.onrender.com').origin
+
     ) {
       return res.status(403).send('Invalid form origin.');
     }
